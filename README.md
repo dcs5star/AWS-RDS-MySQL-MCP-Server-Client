@@ -1,12 +1,12 @@
-# MCP MySQL Database Integration
+# AWS RDS MySQL MCP Integration
 
-A Model Context Protocol (MCP) implementation for MySQL database operations with dual server configurations - one integrated with AWS Bedrock and Streamlit UI, and another standalone server for general MCP clients.
+A Model Context Protocol (MCP) implementation for MySQL database operations with dual server configurations - one integrated with AWS Bedrock and Streamlit UI as MCP client, and another standalone server for general MCP clients like Claude Desktop.
 
 ## 🚀 Features
 
 - **Dual MCP Server Implementation**
-  - Integrated Streamlit app with AWS Bedrock agent
-  - Standalone FastMCP server for Claude Desktop and other MCP clients
+  - Integrated Streamlit UI app with AWS Bedrock agent which also act as MCP Client
+  - Standalone FastMCP server (fastmcp_server.py) for Claude Desktop and other MCP clients
 - **Secure MySQL Operations** with built-in safety checks
 - **Natural Language SQL** via AWS Bedrock integration
 - **Real-time Database Interaction** through web interface
@@ -47,6 +47,8 @@ pip install fastmcp pymysql streamlit boto3 python-dotenv
 
 ### 3. Environment Configuration
 
+#### Note: Make sure you have AWS IAM credential profile configured on the machine from where you running app and/or MCP server.
+
 Copy the example environment file and configure your settings:
 
 ```bash
@@ -56,7 +58,7 @@ cp .env.example .env
 # Edit .env with your actual values
 ```
 
-Update the `.env` file with your configuration:
+.env will have below config. Update it with the actual values:
 
 ```bash
 # AWS Configuration
@@ -151,18 +153,11 @@ Configure your MySQL connection in the `.env` file:
 
 ## 🔍 Example Commands
 
-### Natural Language (Streamlit App)
+### Natural Language (Streamlit App & Claude Desktop)
 - "Show all tables in the database"
-- "Create a products table with id, name, and price"
+- "Create a user table with id, name, and email"
 - "Insert a new user with name John and email john@example.com"
-- "Find all orders from last month"
-
-### Direct SQL (MCP Clients)
-```sql
-SELECT * FROM users WHERE created_at > '2024-01-01';
-CREATE TABLE products (id INT PRIMARY KEY, name VARCHAR(100));
-INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com');
-```
+- "Find all users whose name starts with J"
 
 ## 🚨 Troubleshooting
 
@@ -193,16 +188,8 @@ python -v fastmcp_server.py
 
 ## 📝 License
 
-This project is provided as-is for educational and development purposes.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+This project is provided as-is for educational and development purposes without any liability to author.
 
 ---
 
-**Note**: This implementation requires proper AWS credentials and MySQL database access. Ensure all security best practices are followed in production environments.
+**Note**: This implementation requires proper AWS credentials and MySQL database access. Ensure all security best practices are followed & tested in non-production environments.

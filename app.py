@@ -242,8 +242,8 @@ def converse_with_tools(user_prompt: str):
 
 # ========== STREAMLIT UI ==========
 
-st.set_page_config(page_title="Bedrock + FastMCP RDS App", page_icon="🧠")
-st.title("💬 Bedrock + FastMCP for RDS MySQL")
+st.set_page_config(page_title="Bedrock + FastMCP RDS App", page_icon=None)
+st.title("Bedrock + FastMCP for RDS MySQL")
 st.markdown("Enter SQL-related commands in natural language (e.g. 'Create a table users...').")
 
 user_input = st.text_area("Your instruction:", height=200)

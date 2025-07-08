@@ -30,7 +30,7 @@ MCP/
 
 ```bash
 # Create virtual environment
-python3 -m venv venv-mcp
+python -m venv venv-mcp
 
 # Activate virtual environment
 # Windows:
@@ -42,7 +42,7 @@ source venv-mcp/bin/activate
 ### 2. Install Dependencies
 
 ```bash
-pip3 install fastmcp pymysql streamlit boto3 python-dotenv
+pip install fastmcp pymysql streamlit boto3 python-dotenv
 ```
 
 ### 3. Environment Configuration
@@ -97,7 +97,7 @@ streamlit run app.py
 For use with Claude Desktop or other MCP clients:
 
 ```bash
-python3 fastmcp_server.py
+python fastmcp_server.py
 ```
 
 #### Claude Desktop Configuration
@@ -183,7 +183,7 @@ Configure your MySQL connection in the `.env` file:
 Enable debug logging by setting:
 ```bash
 export PYTHONPATH=.
-python3 -v fastmcp_server.py
+python -v fastmcp_server.py
 ```
 
 ## 📝 License

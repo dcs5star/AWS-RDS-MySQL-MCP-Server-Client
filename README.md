@@ -2,7 +2,7 @@
 
 A Model Context Protocol (MCP) implementation for MySQL database operations with dual server configurations - one integrated with AWS Bedrock and Streamlit UI as MCP client, and another standalone server for general MCP clients like Claude Desktop.
 
-## 🚀 Features
+## Features
 
 - **Dual MCP Server Implementation**
   - Integrated Streamlit UI app with AWS Bedrock agent which also act as MCP Client
@@ -11,7 +11,7 @@ A Model Context Protocol (MCP) implementation for MySQL database operations with
 - **Natural Language SQL** via AWS Bedrock integration
 - **Real-time Database Interaction** through web interface
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 MCP/
@@ -24,7 +24,7 @@ MCP/
 └── README.md             # This file
 ```
 
-## 🛠️ Setup Instructions
+## Setup Instructions
 
 ### 1. Create Virtual Environment
 
@@ -73,12 +73,12 @@ RDS_PASS=your-password
 RDS_DB=your-database-name
 ```
 
-**⚠️ Security Note**: 
+**Security Note**: 
 - Never commit `.env` files to version control
 - Add `.env` to your `.gitignore` file
 - Use AWS IAM roles in production environments
 
-## 🎯 Usage
+## Usage
 
 ### Option 1: Streamlit App with Bedrock Integration
 
@@ -116,7 +116,7 @@ Add to your Claude Desktop config file:
 }
 ```
 
-## 🔧 Configuration Details
+## Configuration Details
 
 ### Database Settings
 
@@ -133,14 +133,14 @@ Configure your MySQL connection in the `.env` file:
 - **AWS_REGION**: AWS region for Bedrock service
 - **MODEL_ID**: Bedrock model identifier
 
-## 🛡️ Security Features
+## Security Features
 
 - **SQL Injection Protection**: Input validation and parameterized queries
 - **Dangerous Operation Blocking**: Prevents DROP DATABASE, TRUNCATE operations
 - **Connection Timeout**: 10-second connection timeout
 - **Transaction Rollback**: Automatic rollback on errors
 
-## 📋 Supported SQL Operations
+## Supported SQL Operations
 
 - `SELECT` - Query data
 - `INSERT` - Add new records
@@ -151,7 +151,7 @@ Configure your MySQL connection in the `.env` file:
 - `SHOW` - Display database information
 - `DESCRIBE` - Show table structure
 
-## 🔍 Example Commands
+## Example Commands
 
 ### Natural Language (Streamlit App & Claude Desktop)
 - "Show all tables in the database"
@@ -159,7 +159,7 @@ Configure your MySQL connection in the `.env` file:
 - "Insert a new user with name John and email john@example.com"
 - "Find all users whose name starts with J"
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -186,7 +186,7 @@ export PYTHONPATH=.
 python -v fastmcp_server.py
 ```
 
-## 📝 License
+## License
 
 This project is provided as-is for educational and development purposes without any liability to author.
 
